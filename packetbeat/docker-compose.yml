@@ -1,0 +1,22 @@
+version: '2'
+services:
+   packetbeat:
+     build:
+       context: ./
+     volumes:
+       - ./config/packetbeat.yml:/etc/config/packetbeat.yml:ro
+     container_name: packetbeat
+     command: >
+       /bin/bash -c "
+          echo Starting Packetbeat : packetbeat
+         packetbeat
+       "
+     cap_add:
+       - NET_ADMIN
+     network_mode: host
+#     networks:
+#       - elk
+  
+#networks:
+#  -elk:
+#    drivers: host

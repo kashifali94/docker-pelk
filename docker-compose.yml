@@ -2,23 +2,6 @@ version: '2'
 
 services:
 
-  packetbeat:
-    build:
-      context: packetbeat/
-    volumes:
-      - ./packetbeat/config/packetbeat.yaml:/usr/share/packebeat/config/packetbeat.yaml:ro
-    container_name: packetbeat
-    command: >
-      /bin/bash -c "
-         echo Starting Packetbeat : packetbeat -e -c=packetbeat.yaml
-        packetbeat -e -c=packetbeat.yaml
-      "
-    networks:
-      - elk
-    links:
-     - logstash
-
-
   elasticsearch:
     build:
       context: elasticsearch/
@@ -39,7 +22,7 @@ services:
       - ./logstash/config/logstash.yml:/usr/share/logstash/config/logstash.yml:ro
       - ./logstash/pipeline:/usr/share/logstash/pipeline:ro
     ports:
-      - "5000:5000"
+      - "5044:5044"
     environment:
       LS_JAVA_OPTS: "-Xmx256m -Xms256m"
     networks:

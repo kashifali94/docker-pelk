@@ -5,6 +5,6 @@
 server.name: kibana
 server.host: "0.0.0.0"
 elasticsearch.url: http://dockerpelk_elasticsearch_1:9200
-elasticsearch.username: kibana
-elasticsearch.password: changeme
+elasticsearch.username: elastic
+elasticsearch.password: elastic
 #xpack.monitoring.ui.container.elasticsearch.enabled: true

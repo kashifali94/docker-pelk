@@ -9,9 +9,9 @@ RUN wget https://artifacts.elastic.co/downloads/beats/packetbeat/${FILENAME}
 RUN dpkg -i ${FILENAME}
 
 WORKDIR packetbeat-${VERSION}
-ADD config/packetbeat.yaml packetbeat.yaml
+#ADD config/packetbeat.yaml packetbeat.yml
 
-COPY config/packetbeat.yaml /etc/packetbeat/packetbeat.yaml
+COPY config/packetbeat.yml /etc/packetbeat/packetbeat.yml
 #RUN chmod go-w /etc/packetbeat/packetbeat.yaml
 
 
