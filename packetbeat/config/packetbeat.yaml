@@ -170,7 +170,7 @@ setup.template.settings:
 #-------------------------- Elasticsearch output ------------------------------
 #output.elasticsearch:
   # Array of hosts to connect to.
-#  hosts: ["0.0.0.0:9200"]
+#  hosts: ["dockerpelk_elasticsearch_1:9200"]
 #  username: "elastic"
 #  password: "elastic"
   #index: "packebeat-%{[beat.version]}-%{+yyyy.MM.dd}"
@@ -191,7 +191,7 @@ setup.template.settings:
 #----------------------------- Logstash output --------------------------------
 output.logstash:
   # The Logstash hosts
-  hosts: ["dockerpelk_logstash_1:5044"]
+  hosts: ["dockerpelk_logstash_1:5000"]
 
   # Optional SSL. By default is off.
   # List of root certificates for HTTPS server verifications
